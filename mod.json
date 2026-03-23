@@ -1,0 +1,15 @@
+{
+  "Name": "Ceaika.NoWallrun",
+  "Description": "it's a no wallrun mod man",
+  "Version": "1.1.0",
+  "LoadPriority": 1,
+  "Scripts": [
+    {
+      "Path": "nowallrun.nut",
+      "RunOn": "CLIENT && MP && !LOBBY",
+      "ClientCallback": {
+        "Before": "NoWallrun_ClientInit"
+      }
+    }
+  ]
+}
