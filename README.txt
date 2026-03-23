@@ -5,7 +5,7 @@ A client-side mod for Titanfall 2 / Northstar that disables wallrunning.
 Ever wanted to play Titanfall like a grounded shooter?
 Me neither.
 
-This mod removes one of the core movement mechanics from the game, forcing you to play without wallruns. It’s intended as a self-imposed handicap — whether for practice, challenge, or just to see how it feels.
+This mod removes one of the core movement mechanics from the game, forcing you to play without wallruns. It’s intended as a self-imposed handicap, whether for practice, challenge, or just to see how it feels.
 
 ## What it does
 
