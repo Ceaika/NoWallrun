@@ -1,20 +1,43 @@
 global function NoWallrun_ClientInit
 
-void function NoWallrun_ClientInit(){
+bool nwr_started = false
+bool nwr_duckHeld = false
+
+void function NoWallrun_ClientInit()
+{
+    if ( nwr_started )
+        return
+
+    nwr_started = true
     thread NoWallrun()
 }
 
-void function NoWallrun(){
-    while( GetGameState() < 3 )
-        wait 0
+void function NoWallrun()
+{
+    while ( true )
+    {
+        entity p = GetLocalViewPlayer()
 
-    for(;;){
-        entity p = GetLocalClientPlayer()
-        while( !IsValid( p ) || !( p.IsWallRunning() ) )
+        if ( p == null || !IsValid( p ) )
+        {
             WaitFrame()
+            continue
+        }
 
-        p.ClientCommand( "+duck" )
-        wait 0
-        p.ClientCommand( "-duck" )
+        if ( p.IsWallRunning() )
+        {
+            p.ClientCommand( "+duck" )
+            nwr_duckHeld = true
+        }
+        else
+        {
+            if ( nwr_duckHeld )
+            {
+                p.ClientCommand( "-duck" )
+                nwr_duckHeld = false
+            }
+        }
+
+        WaitFrame()
     }
 }
