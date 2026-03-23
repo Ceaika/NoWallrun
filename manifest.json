@@ -1,0 +1,7 @@
+{
+  "name": "NoWallrun",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/Ceaika/NoWallrun",
+  "description": "Disables wallrunning for the local player.",
+  "dependencies": []
+}
