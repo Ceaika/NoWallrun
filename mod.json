@@ -8,7 +8,7 @@
       "Path": "nowallrun.nut",
       "RunOn": "CLIENT && MP && !LOBBY",
       "ClientCallback": {
-        "Before": "NoWallrun_ClientInit"
+        "After": "NoWallrun_ClientInit"
       }
     }
   ]
